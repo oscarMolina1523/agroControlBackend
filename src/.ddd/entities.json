@@ -310,6 +310,47 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "Sensor",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "string"
+        },
+        {
+          "name": "numericValue",
+          "type": "number"
+        },
+        {
+          "name": "unit",
+          "type": "string"
+        },
+        {
+          "name": "location",
+          "type": "string"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "name": "tone",
+          "type": "string"
+        },
+        {
+          "name": "arduinoId",
+          "type": "string"
+        }
+      ]
     }
   ]
 }

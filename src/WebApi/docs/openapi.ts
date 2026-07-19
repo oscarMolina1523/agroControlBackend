@@ -1,3 +1,5 @@
+import { SensorSchemas } from "./schemas/sensor.schema";
+import { SensorPaths } from "./paths/sensor.path";
 import { ParcelSchemas } from "./schemas/parcel.schema";
 import { ParcelPaths } from "./paths/parcel.path";
 import { MarketSchemas } from "./schemas/market.schema";
@@ -26,6 +28,7 @@ export const OpenApiSpecification = {
     }
   ],
   paths: {
+    ...SensorPaths,
     ...ParcelPaths,
     ...MarketPaths,
     ...DashboardMetricPaths,
@@ -42,6 +45,7 @@ export const OpenApiSpecification = {
       }
     },
     schemas: {
+      ...SensorSchemas,
       ...ParcelSchemas,
       ...MarketSchemas,
       ...DashboardMetricSchemas,

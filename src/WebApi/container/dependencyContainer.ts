@@ -1,4 +1,9 @@
 import { container } from "tsyringe";
+import { ISensorRepository } from "./../../Domain/repositories/sensorRepository.interface";
+import { SensorRepository } from "./../../Infrastructure/repositories/sensor.repository";
+import { ISensorService } from "./../../Application/interfaces/sensor.service.interface";
+import { SensorService } from "./../../Application/services/sensor.service";
+import { SensorController } from "./../controllers/sensor.controller";
 import { IParcelRepository } from "./../../Domain/repositories/parcelRepository.interface";
 import { ParcelRepository } from "./../../Infrastructure/repositories/parcel.repository";
 import { IParcelService } from "./../../Application/interfaces/parcel.service.interface";
@@ -37,6 +42,10 @@ import { UserController } from "./../controllers/user.controller";
 //builder, database connection and entity service
 
 // AUTO-GENERATED MODULE REGISTRATIONS
+// Sensor
+container.register<ISensorRepository>("ISensorRepository", { useClass: SensorRepository });
+container.register<ISensorService>("ISensorService", { useClass: SensorService });
+container.register<SensorController>("SensorController", { useClass: SensorController });
 // Parcel
 container.register<IParcelRepository>("IParcelRepository", { useClass: ParcelRepository });
 container.register<IParcelService>("IParcelService", { useClass: ParcelService });
