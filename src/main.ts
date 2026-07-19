@@ -6,6 +6,7 @@ import express from "express";
 //AUTO-IMPORT-CONTAINER
 import "./WebApi/container/dependencyContainer";
 //AUTO-IMPORT-ROUTES
+import auditLogRoutes from "./WebApi/routes/auditLog.routes";
 import chatMessageRoutes from "./WebApi/routes/chatMessage.routes";
 import reportRoutes from "./WebApi/routes/report.routes";
 import scanHistoryRoutes from "./WebApi/routes/scanHistory.routes";
@@ -42,6 +43,7 @@ app.get("/api-docs", async (req, res, next) => {
     }
   });
 //AUTO-REGISTER-ROUTES
+app.use("/auditLog", auditLogRoutes);
 app.use("/chatMessage", chatMessageRoutes);
 app.use("/report", reportRoutes);
 app.use("/scanHistory", scanHistoryRoutes);

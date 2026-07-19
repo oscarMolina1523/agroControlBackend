@@ -186,6 +186,19 @@ await db.execute(`
 `);
 
 console.log("✔ ChatMessage ready");
+await db.execute(`
+    CREATE TABLE IF NOT EXISTS AUDITLOGS (
+        ID TEXT PRIMARY KEY,
+        ENTITY TEXT,
+        ENTITYID TEXT,
+        ACTION TEXT,
+        CHANGES TEXT,
+        PERFORMEDBY TEXT,
+        PERFORMEDAT TEXT
+    );
+`);
+
+console.log("✔ AuditLog ready");
 
 
   } catch (error) {

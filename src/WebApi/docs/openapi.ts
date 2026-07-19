@@ -1,3 +1,5 @@
+import { AuditLogSchemas } from "./schemas/auditLog.schema";
+import { AuditLogPaths } from "./paths/auditLog.path";
 import { ChatMessageSchemas } from "./schemas/chatMessage.schema";
 import { ChatMessagePaths } from "./paths/chatMessage.path";
 import { ReportSchemas } from "./schemas/report.schema";
@@ -34,6 +36,7 @@ export const OpenApiSpecification = {
     }
   ],
   paths: {
+    ...AuditLogPaths,
     ...ChatMessagePaths,
     ...ReportPaths,
     ...ScanHistoryPaths,
@@ -54,6 +57,7 @@ export const OpenApiSpecification = {
       }
     },
     schemas: {
+      ...AuditLogSchemas,
       ...ChatMessageSchemas,
       ...ReportSchemas,
       ...ScanHistorySchemas,

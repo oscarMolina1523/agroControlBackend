@@ -1,4 +1,9 @@
 import { container } from "tsyringe";
+import { IAuditLogRepository } from "./../../Domain/repositories/auditLogRepository.interface";
+import { AuditLogRepository } from "./../../Infrastructure/repositories/auditLog.repository";
+import { IAuditLogService } from "./../../Application/interfaces/auditLog.service.interface";
+import { AuditLogService } from "./../../Application/services/auditLog.service";
+import { AuditLogController } from "./../controllers/auditLog.controller";
 import { IChatMessageRepository } from "./../../Domain/repositories/chatMessageRepository.interface";
 import { ChatMessageRepository } from "./../../Infrastructure/repositories/chatMessage.repository";
 import { IChatMessageService } from "./../../Application/interfaces/chatMessage.service.interface";
@@ -66,6 +71,10 @@ container.register<ISqlCommandOperationBuilder>('IOperationBuilder', { useClass:
 container.registerSingleton<IEntitiesService>('IEntityService', EntitiesService);
 
 // AUTO-GENERATED MODULE REGISTRATIONS
+// AuditLog
+container.register<IAuditLogRepository>("IAuditLogRepository", { useClass: AuditLogRepository });
+container.register<IAuditLogService>("IAuditLogService", { useClass: AuditLogService });
+container.register<AuditLogController>("AuditLogController", { useClass: AuditLogController });
 // ChatMessage
 container.register<IChatMessageRepository>("IChatMessageRepository", { useClass: ChatMessageRepository });
 container.register<IChatMessageService>("IChatMessageService", { useClass: ChatMessageService });
