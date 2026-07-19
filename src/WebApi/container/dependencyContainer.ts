@@ -1,4 +1,9 @@
 import { container } from "tsyringe";
+import { IScanHistoryRepository } from "./../../Domain/repositories/scanHistoryRepository.interface";
+import { ScanHistoryRepository } from "./../../Infrastructure/repositories/scanHistory.repository";
+import { IScanHistoryService } from "./../../Application/interfaces/scanHistory.service.interface";
+import { ScanHistoryService } from "./../../Application/services/scanHistory.service";
+import { ScanHistoryController } from "./../controllers/scanHistory.controller";
 import { ISensorRepository } from "./../../Domain/repositories/sensorRepository.interface";
 import { SensorRepository } from "./../../Infrastructure/repositories/sensor.repository";
 import { ISensorService } from "./../../Application/interfaces/sensor.service.interface";
@@ -42,6 +47,10 @@ import { UserController } from "./../controllers/user.controller";
 //builder, database connection and entity service
 
 // AUTO-GENERATED MODULE REGISTRATIONS
+// ScanHistory
+container.register<IScanHistoryRepository>("IScanHistoryRepository", { useClass: ScanHistoryRepository });
+container.register<IScanHistoryService>("IScanHistoryService", { useClass: ScanHistoryService });
+container.register<ScanHistoryController>("ScanHistoryController", { useClass: ScanHistoryController });
 // Sensor
 container.register<ISensorRepository>("ISensorRepository", { useClass: SensorRepository });
 container.register<ISensorService>("ISensorService", { useClass: SensorService });

@@ -1,3 +1,5 @@
+import { ScanHistorySchemas } from "./schemas/scanHistory.schema";
+import { ScanHistoryPaths } from "./paths/scanHistory.path";
 import { SensorSchemas } from "./schemas/sensor.schema";
 import { SensorPaths } from "./paths/sensor.path";
 import { ParcelSchemas } from "./schemas/parcel.schema";
@@ -28,6 +30,7 @@ export const OpenApiSpecification = {
     }
   ],
   paths: {
+    ...ScanHistoryPaths,
     ...SensorPaths,
     ...ParcelPaths,
     ...MarketPaths,
@@ -45,6 +48,7 @@ export const OpenApiSpecification = {
       }
     },
     schemas: {
+      ...ScanHistorySchemas,
       ...SensorSchemas,
       ...ParcelSchemas,
       ...MarketSchemas,

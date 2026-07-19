@@ -351,6 +351,31 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "ScanHistory",
+      "fields": [
+        {
+          "name": "fileName",
+          "type": "string"
+        },
+        {
+          "name": "resultText",
+          "type": "string"
+        },
+        {
+          "name": "createdAt",
+          "type": "string"
+        },
+        {
+          "name": "imageUrl",
+          "type": "string"
+        },
+        {
+          "name": "userId",
+          "type": "string"
+        }
+      ]
     }
   ]
 }
