@@ -433,6 +433,27 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "ChatMessage",
+      "fields": [
+        {
+          "name": "role",
+          "type": "string"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "timestamp",
+          "type": "number"
+        },
+        {
+          "name": "userId",
+          "type": "string"
+        }
+      ]
     }
   ]
 }
