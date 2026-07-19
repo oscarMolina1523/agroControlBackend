@@ -4,6 +4,7 @@ import express from "express";
 //AUTO-IMPORT-CONTAINER
 import "./WebApi/container/dependencyContainer";
 //AUTO-IMPORT-ROUTES
+import alertRoutes from "./WebApi/routes/alert.routes";
 import catalogRoutes from "./WebApi/routes/catalog.routes";
 import userRoutes from "./WebApi/routes/user.routes";
 //AUTO-IMPORT-OPENAPI
@@ -31,6 +32,7 @@ app.get("/api-docs", async (req, res, next) => {
     }
   });
 //AUTO-REGISTER-ROUTES
+app.use("/alert", alertRoutes);
 app.use("/catalog", catalogRoutes);
 app.use("/user", userRoutes);
 

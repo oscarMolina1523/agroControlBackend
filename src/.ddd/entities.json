@@ -81,6 +81,47 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "Alert",
+      "fields": [
+        {
+          "name": "emoji",
+          "type": "string"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "time",
+          "type": "string"
+        },
+        {
+          "name": "severity",
+          "type": "string"
+        },
+        {
+          "name": "resolved",
+          "type": "boolean"
+        },
+        {
+          "name": "source",
+          "type": "string"
+        },
+        {
+          "name": "targetPage",
+          "type": "string"
+        },
+        {
+          "name": "targetId",
+          "type": "string"
+        }
+      ]
     }
   ]
 }
