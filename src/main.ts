@@ -4,6 +4,7 @@ import express from "express";
 //AUTO-IMPORT-CONTAINER
 import "./WebApi/container/dependencyContainer";
 //AUTO-IMPORT-ROUTES
+import arduinoRoutes from "./WebApi/routes/arduino.routes";
 import alertRoutes from "./WebApi/routes/alert.routes";
 import catalogRoutes from "./WebApi/routes/catalog.routes";
 import userRoutes from "./WebApi/routes/user.routes";
@@ -32,6 +33,7 @@ app.get("/api-docs", async (req, res, next) => {
     }
   });
 //AUTO-REGISTER-ROUTES
+app.use("/arduino", arduinoRoutes);
 app.use("/alert", alertRoutes);
 app.use("/catalog", catalogRoutes);
 app.use("/user", userRoutes);

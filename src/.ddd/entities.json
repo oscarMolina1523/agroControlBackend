@@ -122,6 +122,35 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "Arduino",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "location",
+          "type": "string"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "name": "baudRate",
+          "type": "number"
+        },
+        {
+          "name": "frequency",
+          "type": "number"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        }
+      ]
     }
   ]
 }
