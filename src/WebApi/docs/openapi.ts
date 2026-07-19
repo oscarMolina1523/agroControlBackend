@@ -27,8 +27,8 @@ import { AuthSchemas } from "./schemas/auth.schema";
 export const OpenApiSpecification = {
   openapi: "3.0.0",
   info: {
-    title: "My API",
-    version: "1.0.0",
+    title: "Agrocontrol API",
+    version: "1.1.0",
     description: "Auto-generated API documentation"
   },
   servers: [
