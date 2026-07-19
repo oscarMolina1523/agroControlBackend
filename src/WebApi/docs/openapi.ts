@@ -1,3 +1,5 @@
+import { AlertSchemas } from "./schemas/alert.schema";
+import { AlertPaths } from "./paths/alert.path";
 import { CatalogSchemas } from "./schemas/catalog.schema";
 import { CatalogPaths } from "./paths/catalog.path";
 import { UserSchemas } from "./schemas/user.schema";
@@ -16,6 +18,7 @@ export const OpenApiSpecification = {
     }
   ],
   paths: {
+    ...AlertPaths,
     ...CatalogPaths,
     ...UserPaths,},
   components: {
@@ -27,6 +30,7 @@ export const OpenApiSpecification = {
       }
     },
     schemas: {
+      ...AlertSchemas,
       ...CatalogSchemas,
       ...UserSchemas,}
   }
