@@ -22,6 +22,8 @@ import { CatalogSchemas } from "./schemas/catalog.schema";
 import { CatalogPaths } from "./paths/catalog.path";
 import { UserSchemas } from "./schemas/user.schema";
 import { UserPaths } from "./paths/user.path";
+import { AuthPaths } from "./paths/auth.path";
+import { AuthSchemas } from "./schemas/auth.schema";
 export const OpenApiSpecification = {
   openapi: "3.0.0",
   info: {
@@ -47,7 +49,9 @@ export const OpenApiSpecification = {
     ...ArduinoPaths,
     ...AlertPaths,
     ...CatalogPaths,
-    ...UserPaths,},
+    ...UserPaths,
+    ...AuthPaths,
+  },
   components: {
     securitySchemes: {
       BearerAuth: {
@@ -68,6 +72,8 @@ export const OpenApiSpecification = {
       ...ArduinoSchemas,
       ...AlertSchemas,
       ...CatalogSchemas,
-      ...UserSchemas,}
+      ...UserSchemas,
+      ...AuthSchemas,
+    }
   }
 };

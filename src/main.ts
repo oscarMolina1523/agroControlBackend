@@ -21,6 +21,7 @@ import userRoutes from "./WebApi/routes/user.routes";
 //AUTO-IMPORT-OPENAPI
 // import { apiReference } from "@scalar/express-api-reference";
 import { OpenApiSpecification } from "./WebApi/docs/openapi";
+import authRoutes from "./WebApi/routes/auth.routes";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -43,6 +44,7 @@ app.get("/api-docs", async (req, res, next) => {
     }
   });
 //AUTO-REGISTER-ROUTES
+app.use("/auth", authRoutes);
 app.use("/auditLog", auditLogRoutes);
 app.use("/chatMessage", chatMessageRoutes);
 app.use("/report", reportRoutes);
