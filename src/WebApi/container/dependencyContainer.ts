@@ -1,4 +1,9 @@
 import { container } from "tsyringe";
+import { IParcelRepository } from "./../../Domain/repositories/parcelRepository.interface";
+import { ParcelRepository } from "./../../Infrastructure/repositories/parcel.repository";
+import { IParcelService } from "./../../Application/interfaces/parcel.service.interface";
+import { ParcelService } from "./../../Application/services/parcel.service";
+import { ParcelController } from "./../controllers/parcel.controller";
 import { IMarketRepository } from "./../../Domain/repositories/marketRepository.interface";
 import { MarketRepository } from "./../../Infrastructure/repositories/market.repository";
 import { IMarketService } from "./../../Application/interfaces/market.service.interface";
@@ -32,6 +37,10 @@ import { UserController } from "./../controllers/user.controller";
 //builder, database connection and entity service
 
 // AUTO-GENERATED MODULE REGISTRATIONS
+// Parcel
+container.register<IParcelRepository>("IParcelRepository", { useClass: ParcelRepository });
+container.register<IParcelService>("IParcelService", { useClass: ParcelService });
+container.register<ParcelController>("ParcelController", { useClass: ParcelController });
 // Market
 container.register<IMarketRepository>("IMarketRepository", { useClass: MarketRepository });
 container.register<IMarketService>("IMarketService", { useClass: MarketService });
