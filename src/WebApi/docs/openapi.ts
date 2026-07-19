@@ -1,3 +1,5 @@
+import { ArduinoSchemas } from "./schemas/arduino.schema";
+import { ArduinoPaths } from "./paths/arduino.path";
 import { AlertSchemas } from "./schemas/alert.schema";
 import { AlertPaths } from "./paths/alert.path";
 import { CatalogSchemas } from "./schemas/catalog.schema";
@@ -18,6 +20,7 @@ export const OpenApiSpecification = {
     }
   ],
   paths: {
+    ...ArduinoPaths,
     ...AlertPaths,
     ...CatalogPaths,
     ...UserPaths,},
@@ -30,6 +33,7 @@ export const OpenApiSpecification = {
       }
     },
     schemas: {
+      ...ArduinoSchemas,
       ...AlertSchemas,
       ...CatalogSchemas,
       ...UserSchemas,}

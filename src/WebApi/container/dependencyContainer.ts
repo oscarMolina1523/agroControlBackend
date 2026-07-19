@@ -1,4 +1,9 @@
 import { container } from "tsyringe";
+import { IArduinoRepository } from "./../../Domain/repositories/arduinoRepository.interface";
+import { ArduinoRepository } from "./../../Infrastructure/repositories/arduino.repository";
+import { IArduinoService } from "./../../Application/interfaces/arduino.service.interface";
+import { ArduinoService } from "./../../Application/services/arduino.service";
+import { ArduinoController } from "./../controllers/arduino.controller";
 import { IAlertRepository } from "./../../Domain/repositories/alertRepository.interface";
 import { AlertRepository } from "./../../Infrastructure/repositories/alert.repository";
 import { IAlertService } from "./../../Application/interfaces/alert.service.interface";
@@ -17,6 +22,10 @@ import { UserController } from "./../controllers/user.controller";
 //builder, database connection and entity service
 
 // AUTO-GENERATED MODULE REGISTRATIONS
+// Arduino
+container.register<IArduinoRepository>("IArduinoRepository", { useClass: ArduinoRepository });
+container.register<IArduinoService>("IArduinoService", { useClass: ArduinoService });
+container.register<ArduinoController>("ArduinoController", { useClass: ArduinoController });
 // Alert
 container.register<IAlertRepository>("IAlertRepository", { useClass: AlertRepository });
 container.register<IAlertService>("IAlertService", { useClass: AlertService });
