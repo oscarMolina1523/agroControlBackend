@@ -1,3 +1,5 @@
+import { DashboardMetricSchemas } from "./schemas/dashboardMetric.schema";
+import { DashboardMetricPaths } from "./paths/dashboardMetric.path";
 import { ArduinoSchemas } from "./schemas/arduino.schema";
 import { ArduinoPaths } from "./paths/arduino.path";
 import { AlertSchemas } from "./schemas/alert.schema";
@@ -20,6 +22,7 @@ export const OpenApiSpecification = {
     }
   ],
   paths: {
+    ...DashboardMetricPaths,
     ...ArduinoPaths,
     ...AlertPaths,
     ...CatalogPaths,
@@ -33,6 +36,7 @@ export const OpenApiSpecification = {
       }
     },
     schemas: {
+      ...DashboardMetricSchemas,
       ...ArduinoSchemas,
       ...AlertSchemas,
       ...CatalogSchemas,

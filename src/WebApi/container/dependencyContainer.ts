@@ -1,4 +1,9 @@
 import { container } from "tsyringe";
+import { IDashboardMetricRepository } from "./../../Domain/repositories/dashboardMetricRepository.interface";
+import { DashboardMetricRepository } from "./../../Infrastructure/repositories/dashboardMetric.repository";
+import { IDashboardMetricService } from "./../../Application/interfaces/dashboardMetric.service.interface";
+import { DashboardMetricService } from "./../../Application/services/dashboardMetric.service";
+import { DashboardMetricController } from "./../controllers/dashboardMetric.controller";
 import { IArduinoRepository } from "./../../Domain/repositories/arduinoRepository.interface";
 import { ArduinoRepository } from "./../../Infrastructure/repositories/arduino.repository";
 import { IArduinoService } from "./../../Application/interfaces/arduino.service.interface";
@@ -22,6 +27,10 @@ import { UserController } from "./../controllers/user.controller";
 //builder, database connection and entity service
 
 // AUTO-GENERATED MODULE REGISTRATIONS
+// DashboardMetric
+container.register<IDashboardMetricRepository>("IDashboardMetricRepository", { useClass: DashboardMetricRepository });
+container.register<IDashboardMetricService>("IDashboardMetricService", { useClass: DashboardMetricService });
+container.register<DashboardMetricController>("DashboardMetricController", { useClass: DashboardMetricController });
 // Arduino
 container.register<IArduinoRepository>("IArduinoRepository", { useClass: ArduinoRepository });
 container.register<IArduinoService>("IArduinoService", { useClass: ArduinoService });
