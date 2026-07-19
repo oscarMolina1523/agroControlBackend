@@ -4,6 +4,7 @@ import express from "express";
 //AUTO-IMPORT-CONTAINER
 import "./WebApi/container/dependencyContainer";
 //AUTO-IMPORT-ROUTES
+import scanHistoryRoutes from "./WebApi/routes/scanHistory.routes";
 import sensorRoutes from "./WebApi/routes/sensor.routes";
 import parcelRoutes from "./WebApi/routes/parcel.routes";
 import marketRoutes from "./WebApi/routes/market.routes";
@@ -37,6 +38,7 @@ app.get("/api-docs", async (req, res, next) => {
     }
   });
 //AUTO-REGISTER-ROUTES
+app.use("/scanHistory", scanHistoryRoutes);
 app.use("/sensor", sensorRoutes);
 app.use("/parcel", parcelRoutes);
 app.use("/market", marketRoutes);
