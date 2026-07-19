@@ -1,3 +1,5 @@
+import { MarketSchemas } from "./schemas/market.schema";
+import { MarketPaths } from "./paths/market.path";
 import { DashboardMetricSchemas } from "./schemas/dashboardMetric.schema";
 import { DashboardMetricPaths } from "./paths/dashboardMetric.path";
 import { ArduinoSchemas } from "./schemas/arduino.schema";
@@ -22,6 +24,7 @@ export const OpenApiSpecification = {
     }
   ],
   paths: {
+    ...MarketPaths,
     ...DashboardMetricPaths,
     ...ArduinoPaths,
     ...AlertPaths,
@@ -36,6 +39,7 @@ export const OpenApiSpecification = {
       }
     },
     schemas: {
+      ...MarketSchemas,
       ...DashboardMetricSchemas,
       ...ArduinoSchemas,
       ...AlertSchemas,

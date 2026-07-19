@@ -1,4 +1,9 @@
 import { container } from "tsyringe";
+import { IMarketRepository } from "./../../Domain/repositories/marketRepository.interface";
+import { MarketRepository } from "./../../Infrastructure/repositories/market.repository";
+import { IMarketService } from "./../../Application/interfaces/market.service.interface";
+import { MarketService } from "./../../Application/services/market.service";
+import { MarketController } from "./../controllers/market.controller";
 import { IDashboardMetricRepository } from "./../../Domain/repositories/dashboardMetricRepository.interface";
 import { DashboardMetricRepository } from "./../../Infrastructure/repositories/dashboardMetric.repository";
 import { IDashboardMetricService } from "./../../Application/interfaces/dashboardMetric.service.interface";
@@ -27,6 +32,10 @@ import { UserController } from "./../controllers/user.controller";
 //builder, database connection and entity service
 
 // AUTO-GENERATED MODULE REGISTRATIONS
+// Market
+container.register<IMarketRepository>("IMarketRepository", { useClass: MarketRepository });
+container.register<IMarketService>("IMarketService", { useClass: MarketService });
+container.register<MarketController>("MarketController", { useClass: MarketController });
 // DashboardMetric
 container.register<IDashboardMetricRepository>("IDashboardMetricRepository", { useClass: DashboardMetricRepository });
 container.register<IDashboardMetricService>("IDashboardMetricService", { useClass: DashboardMetricService });

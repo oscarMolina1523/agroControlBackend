@@ -184,6 +184,71 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "Market",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "price",
+          "type": "number"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "name": "category",
+          "type": "string"
+        },
+        {
+          "name": "imageUrl",
+          "type": "string[]"
+        },
+        {
+          "name": "entityId",
+          "type": "string"
+        },
+        {
+          "name": "startingPrice",
+          "type": "number"
+        },
+        {
+          "name": "currentBid",
+          "type": "number"
+        },
+        {
+          "name": "highestBidderId",
+          "type": "string"
+        },
+        {
+          "name": "bidCount",
+          "type": "number"
+        },
+        {
+          "name": "createdAt",
+          "type": "string"
+        },
+        {
+          "name": "endDate",
+          "type": "string"
+        },
+        {
+          "name": "lotSize",
+          "type": "number"
+        },
+        {
+          "name": "unit",
+          "type": "string"
+        }
+      ]
     }
   ]
 }
