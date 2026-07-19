@@ -6,6 +6,7 @@ import express from "express";
 //AUTO-IMPORT-CONTAINER
 import "./WebApi/container/dependencyContainer";
 //AUTO-IMPORT-ROUTES
+import auditLogRoutes from "./WebApi/routes/auditLog.routes";
 import chatMessageRoutes from "./WebApi/routes/chatMessage.routes";
 import reportRoutes from "./WebApi/routes/report.routes";
 import scanHistoryRoutes from "./WebApi/routes/scanHistory.routes";
@@ -20,6 +21,8 @@ import userRoutes from "./WebApi/routes/user.routes";
 //AUTO-IMPORT-OPENAPI
 // import { apiReference } from "@scalar/express-api-reference";
 import { OpenApiSpecification } from "./WebApi/docs/openapi";
+import authRoutes from "./WebApi/routes/auth.routes";
+import { validateToken } from "./WebApi/middlewares/auth.middleware";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -42,17 +45,19 @@ app.get("/api-docs", async (req, res, next) => {
     }
   });
 //AUTO-REGISTER-ROUTES
-app.use("/chatMessage", chatMessageRoutes);
-app.use("/report", reportRoutes);
-app.use("/scanHistory", scanHistoryRoutes);
-app.use("/sensor", sensorRoutes);
-app.use("/parcel", parcelRoutes);
-app.use("/market", marketRoutes);
-app.use("/dashboardMetric", dashboardMetricRoutes);
-app.use("/arduino", arduinoRoutes);
-app.use("/alert", alertRoutes);
-app.use("/catalog", catalogRoutes);
-app.use("/user", userRoutes);
+app.use("/auth", authRoutes);
+app.use("/auditLog", validateToken, auditLogRoutes);
+app.use("/chatMessage", validateToken,chatMessageRoutes);
+app.use("/report", validateToken, reportRoutes);
+app.use("/scanHistory", validateToken, scanHistoryRoutes);
+app.use("/sensor", validateToken, sensorRoutes);
+app.use("/parcel", validateToken, parcelRoutes);
+app.use("/market", validateToken, marketRoutes);
+app.use("/dashboardMetric", validateToken, dashboardMetricRoutes);
+app.use("/arduino", validateToken, arduinoRoutes);
+app.use("/alert", validateToken,alertRoutes);
+app.use("/catalog", validateToken, catalogRoutes);
+app.use("/user", validateToken, userRoutes);
 
 async function startServer() {
   // await initializeDatabase();

@@ -9,5 +9,6 @@ export enum EntityType {
   Sensor = "Sensor",
   ScanHistory = "ScanHistory",
   Report = "Report",
-  ChatMessage = "ChatMessage"
+  ChatMessage = "ChatMessage",
+  AuditLog = "AuditLog"
 }

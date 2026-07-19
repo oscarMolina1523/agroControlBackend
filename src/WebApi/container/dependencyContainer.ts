@@ -1,4 +1,9 @@
 import { container } from "tsyringe";
+import { IAuditLogRepository } from "./../../Domain/repositories/auditLogRepository.interface";
+import { AuditLogRepository } from "./../../Infrastructure/repositories/auditLog.repository";
+import { IAuditLogService } from "./../../Application/interfaces/auditLog.service.interface";
+import { AuditLogService } from "./../../Application/services/auditLog.service";
+import { AuditLogController } from "./../controllers/auditLog.controller";
 import { IChatMessageRepository } from "./../../Domain/repositories/chatMessageRepository.interface";
 import { ChatMessageRepository } from "./../../Infrastructure/repositories/chatMessage.repository";
 import { IChatMessageService } from "./../../Application/interfaces/chatMessage.service.interface";
@@ -60,12 +65,29 @@ import { ISqlCommandOperationBuilder } from "../../Infrastructure/interface/sqlC
 import { SqlCommandOperationBuilder } from "../../Infrastructure/builders/sqlCommandOperation.builder";
 import { EntitiesService } from "../../Infrastructure/services/entities.service";
 import { IEntitiesService } from "../../Infrastructure/interface/entitiesService.interface";
+import { ITokenRepository } from "../../Domain/repositories/tokenRepository.interface";
+import TokenRepository from "../../Infrastructure/repositories/tokenRepository";
+import { IAuthService } from "../../Application/interfaces/authService.interface";
+import AuthService from "../../Application/services/auth.service";
+import AuthController from "../controllers/auth.controller";
 //builder, database connection and entity service
 container.registerSingleton<ISingletonSqlConnection>('ISingletonSqlConnection', SingletonSqlConnection);
 container.register<ISqlCommandOperationBuilder>('IOperationBuilder', { useClass: SqlCommandOperationBuilder });
 container.registerSingleton<IEntitiesService>('IEntityService', EntitiesService);
 
 // AUTO-GENERATED MODULE REGISTRATIONS
+
+//token dependencies
+container.register<ITokenRepository>('ITokenRepository', {useClass: TokenRepository});
+
+//auth dependencies
+container.register<IAuthService>('IAuthService', { useClass: AuthService });
+container.register<AuthController>('AuthController', { useClass: AuthController });
+
+// AuditLog
+container.register<IAuditLogRepository>("IAuditLogRepository", { useClass: AuditLogRepository });
+container.register<IAuditLogService>("IAuditLogService", { useClass: AuditLogService });
+container.register<AuditLogController>("AuditLogController", { useClass: AuditLogController });
 // ChatMessage
 container.register<IChatMessageRepository>("IChatMessageRepository", { useClass: ChatMessageRepository });
 container.register<IChatMessageService>("IChatMessageService", { useClass: ChatMessageService });

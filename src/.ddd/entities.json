@@ -454,6 +454,35 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "AuditLog",
+      "fields": [
+        {
+          "name": "entity",
+          "type": "string"
+        },
+        {
+          "name": "entityId",
+          "type": "string"
+        },
+        {
+          "name": "action",
+          "type": "string"
+        },
+        {
+          "name": "changes",
+          "type": "string"
+        },
+        {
+          "name": "performedBy",
+          "type": "string"
+        },
+        {
+          "name": "performedAt",
+          "type": "Date"
+        }
+      ]
     }
   ],
   "databaseProvider": "turso"

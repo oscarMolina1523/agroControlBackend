@@ -34,6 +34,7 @@ export class EntitiesService implements IEntitiesService {
     this.entities.set(EntityType.ScanHistory, this.getScanHistorySettings());
     this.entities.set(EntityType.Report, this.getReportSettings());
     this.entities.set(EntityType.ChatMessage, this.getChatMessageSettings());
+    this.entities.set(EntityType.AuditLog, this.getAuditLogSettings());
   }
 
   
@@ -214,6 +215,19 @@ export class EntitiesService implements IEntitiesService {
             new SqlColumnSettings("USERID", "userId", false),
         ];
     return new SqlEntitySettings("CHATMESSAGES", columns);
+  }
+
+  private getAuditLogSettings(): SqlEntitySettings {
+    const columns: SqlColumnSettings[] = [
+        new SqlColumnSettings("ID", "id", true),
+            new SqlColumnSettings("ENTITY", "entity", false),
+            new SqlColumnSettings("ENTITYID", "entityId", false),
+            new SqlColumnSettings("ACTION", "action", false),
+            new SqlColumnSettings("CHANGES", "changes", false),
+            new SqlColumnSettings("PERFORMEDBY", "performedBy", false),
+            new SqlColumnSettings("PERFORMEDAT", "performedAt", false),
+        ];
+    return new SqlEntitySettings("AUDITLOGS", columns);
   }
 
 }

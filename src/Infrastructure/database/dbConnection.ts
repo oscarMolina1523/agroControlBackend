@@ -24,7 +24,7 @@ export class SingletonSqlConnection implements ISingletonSqlConnection {
         url: process.env.TURSO_DB_URL || "no found",
         authToken: process.env.TURSO_DB_AUTH_TOKEN || "no found",
       });
-      console.log("Conexión SQLite abierta");
+      console.log("Conexión Turso abierta");
     }
   }
 

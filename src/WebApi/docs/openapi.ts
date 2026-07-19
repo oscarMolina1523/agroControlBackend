@@ -1,3 +1,5 @@
+import { AuditLogSchemas } from "./schemas/auditLog.schema";
+import { AuditLogPaths } from "./paths/auditLog.path";
 import { ChatMessageSchemas } from "./schemas/chatMessage.schema";
 import { ChatMessagePaths } from "./paths/chatMessage.path";
 import { ReportSchemas } from "./schemas/report.schema";
@@ -20,6 +22,8 @@ import { CatalogSchemas } from "./schemas/catalog.schema";
 import { CatalogPaths } from "./paths/catalog.path";
 import { UserSchemas } from "./schemas/user.schema";
 import { UserPaths } from "./paths/user.path";
+import { AuthPaths } from "./paths/auth.path";
+import { AuthSchemas } from "./schemas/auth.schema";
 export const OpenApiSpecification = {
   openapi: "3.0.0",
   info: {
@@ -34,6 +38,7 @@ export const OpenApiSpecification = {
     }
   ],
   paths: {
+    ...AuditLogPaths,
     ...ChatMessagePaths,
     ...ReportPaths,
     ...ScanHistoryPaths,
@@ -44,7 +49,9 @@ export const OpenApiSpecification = {
     ...ArduinoPaths,
     ...AlertPaths,
     ...CatalogPaths,
-    ...UserPaths,},
+    ...UserPaths,
+    ...AuthPaths,
+  },
   components: {
     securitySchemes: {
       BearerAuth: {
@@ -54,6 +61,7 @@ export const OpenApiSpecification = {
       }
     },
     schemas: {
+      ...AuditLogSchemas,
       ...ChatMessageSchemas,
       ...ReportSchemas,
       ...ScanHistorySchemas,
@@ -64,6 +72,8 @@ export const OpenApiSpecification = {
       ...ArduinoSchemas,
       ...AlertSchemas,
       ...CatalogSchemas,
-      ...UserSchemas,}
+      ...UserSchemas,
+      ...AuthSchemas,
+    }
   }
 };
