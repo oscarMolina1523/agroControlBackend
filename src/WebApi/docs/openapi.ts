@@ -1,3 +1,5 @@
+import { ChatMessageSchemas } from "./schemas/chatMessage.schema";
+import { ChatMessagePaths } from "./paths/chatMessage.path";
 import { ReportSchemas } from "./schemas/report.schema";
 import { ReportPaths } from "./paths/report.path";
 import { ScanHistorySchemas } from "./schemas/scanHistory.schema";
@@ -32,6 +34,7 @@ export const OpenApiSpecification = {
     }
   ],
   paths: {
+    ...ChatMessagePaths,
     ...ReportPaths,
     ...ScanHistoryPaths,
     ...SensorPaths,
@@ -51,6 +54,7 @@ export const OpenApiSpecification = {
       }
     },
     schemas: {
+      ...ChatMessageSchemas,
       ...ReportSchemas,
       ...ScanHistorySchemas,
       ...SensorSchemas,

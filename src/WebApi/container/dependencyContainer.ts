@@ -1,4 +1,9 @@
 import { container } from "tsyringe";
+import { IChatMessageRepository } from "./../../Domain/repositories/chatMessageRepository.interface";
+import { ChatMessageRepository } from "./../../Infrastructure/repositories/chatMessage.repository";
+import { IChatMessageService } from "./../../Application/interfaces/chatMessage.service.interface";
+import { ChatMessageService } from "./../../Application/services/chatMessage.service";
+import { ChatMessageController } from "./../controllers/chatMessage.controller";
 import { IReportRepository } from "./../../Domain/repositories/reportRepository.interface";
 import { ReportRepository } from "./../../Infrastructure/repositories/report.repository";
 import { IReportService } from "./../../Application/interfaces/report.service.interface";
@@ -52,6 +57,10 @@ import { UserController } from "./../controllers/user.controller";
 //builder, database connection and entity service
 
 // AUTO-GENERATED MODULE REGISTRATIONS
+// ChatMessage
+container.register<IChatMessageRepository>("IChatMessageRepository", { useClass: ChatMessageRepository });
+container.register<IChatMessageService>("IChatMessageService", { useClass: ChatMessageService });
+container.register<ChatMessageController>("ChatMessageController", { useClass: ChatMessageController });
 // Report
 container.register<IReportRepository>("IReportRepository", { useClass: ReportRepository });
 container.register<IReportService>("IReportService", { useClass: ReportService });
