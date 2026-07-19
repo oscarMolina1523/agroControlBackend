@@ -54,7 +54,16 @@ import { UserRepository } from "./../../Infrastructure/repositories/user.reposit
 import { IUserService } from "./../../Application/interfaces/user.service.interface";
 import { UserService } from "./../../Application/services/user.service";
 import { UserController } from "./../controllers/user.controller";
+import { ISingletonSqlConnection } from '../../Infrastructure/interface/dbConnection.interface';
+import { SingletonSqlConnection } from '../../Infrastructure/database/dbConnection';
+import { ISqlCommandOperationBuilder } from "../../Infrastructure/interface/sqlCommandOperation.interface";
+import { SqlCommandOperationBuilder } from "../../Infrastructure/builders/sqlCommandOperation.builder";
+import { EntitiesService } from "../../Infrastructure/services/entities.service";
+import { IEntitiesService } from "../../Infrastructure/interface/entitiesService.interface";
 //builder, database connection and entity service
+container.registerSingleton<ISingletonSqlConnection>('ISingletonSqlConnection', SingletonSqlConnection);
+container.register<ISqlCommandOperationBuilder>('IOperationBuilder', { useClass: SqlCommandOperationBuilder });
+container.registerSingleton<IEntitiesService>('IEntityService', EntitiesService);
 
 // AUTO-GENERATED MODULE REGISTRATIONS
 // ChatMessage

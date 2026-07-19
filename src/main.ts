@@ -1,6 +1,8 @@
 import "reflect-metadata";
 //AUTO-IMPORT-DOTENV
+import "dotenv/config";
 import express from "express";
+import { initializeDatabase } from "./Infrastructure/database/initializeDatabase";
 //AUTO-IMPORT-CONTAINER
 import "./WebApi/container/dependencyContainer";
 //AUTO-IMPORT-ROUTES
@@ -52,6 +54,12 @@ app.use("/alert", alertRoutes);
 app.use("/catalog", catalogRoutes);
 app.use("/user", userRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+async function startServer() {
+  await initializeDatabase();
+
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+startServer();
