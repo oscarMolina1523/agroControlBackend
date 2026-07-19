@@ -151,6 +151,39 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "DashboardMetric",
+      "fields": [
+        {
+          "name": "label",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "string"
+        },
+        {
+          "name": "percentage",
+          "type": "number"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "color",
+          "type": "string"
+        },
+        {
+          "name": "chartData",
+          "type": "number[]"
+        },
+        {
+          "name": "icon",
+          "type": "string"
+        }
+      ]
     }
   ]
 }
