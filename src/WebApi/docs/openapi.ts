@@ -1,3 +1,5 @@
+import { CatalogSchemas } from "./schemas/catalog.schema";
+import { CatalogPaths } from "./paths/catalog.path";
 import { UserSchemas } from "./schemas/user.schema";
 import { UserPaths } from "./paths/user.path";
 export const OpenApiSpecification = {
@@ -14,6 +16,7 @@ export const OpenApiSpecification = {
     }
   ],
   paths: {
+    ...CatalogPaths,
     ...UserPaths,},
   components: {
     securitySchemes: {
@@ -24,6 +27,7 @@ export const OpenApiSpecification = {
       }
     },
     schemas: {
+      ...CatalogSchemas,
       ...UserSchemas,}
   }
 };
