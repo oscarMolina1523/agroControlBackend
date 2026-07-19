@@ -2,7 +2,7 @@ import "reflect-metadata";
 //AUTO-IMPORT-DOTENV
 import "dotenv/config";
 import express from "express";
-import { initializeDatabase } from "./Infrastructure/database/initializeDatabase";
+// import { initializeDatabase } from "./Infrastructure/database/initializeDatabase";
 //AUTO-IMPORT-CONTAINER
 import "./WebApi/container/dependencyContainer";
 //AUTO-IMPORT-ROUTES
@@ -18,7 +18,7 @@ import alertRoutes from "./WebApi/routes/alert.routes";
 import catalogRoutes from "./WebApi/routes/catalog.routes";
 import userRoutes from "./WebApi/routes/user.routes";
 //AUTO-IMPORT-OPENAPI
-import { apiReference } from "@scalar/express-api-reference";
+// import { apiReference } from "@scalar/express-api-reference";
 import { OpenApiSpecification } from "./WebApi/docs/openapi";
 
 const app = express();
@@ -55,7 +55,7 @@ app.use("/catalog", catalogRoutes);
 app.use("/user", userRoutes);
 
 async function startServer() {
-  await initializeDatabase();
+  // await initializeDatabase();
 
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
