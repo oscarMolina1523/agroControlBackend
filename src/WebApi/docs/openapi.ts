@@ -1,3 +1,5 @@
+import { ReportSchemas } from "./schemas/report.schema";
+import { ReportPaths } from "./paths/report.path";
 import { ScanHistorySchemas } from "./schemas/scanHistory.schema";
 import { ScanHistoryPaths } from "./paths/scanHistory.path";
 import { SensorSchemas } from "./schemas/sensor.schema";
@@ -30,6 +32,7 @@ export const OpenApiSpecification = {
     }
   ],
   paths: {
+    ...ReportPaths,
     ...ScanHistoryPaths,
     ...SensorPaths,
     ...ParcelPaths,
@@ -48,6 +51,7 @@ export const OpenApiSpecification = {
       }
     },
     schemas: {
+      ...ReportSchemas,
       ...ScanHistorySchemas,
       ...SensorSchemas,
       ...ParcelSchemas,

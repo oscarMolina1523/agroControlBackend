@@ -1,4 +1,9 @@
 import { container } from "tsyringe";
+import { IReportRepository } from "./../../Domain/repositories/reportRepository.interface";
+import { ReportRepository } from "./../../Infrastructure/repositories/report.repository";
+import { IReportService } from "./../../Application/interfaces/report.service.interface";
+import { ReportService } from "./../../Application/services/report.service";
+import { ReportController } from "./../controllers/report.controller";
 import { IScanHistoryRepository } from "./../../Domain/repositories/scanHistoryRepository.interface";
 import { ScanHistoryRepository } from "./../../Infrastructure/repositories/scanHistory.repository";
 import { IScanHistoryService } from "./../../Application/interfaces/scanHistory.service.interface";
@@ -47,6 +52,10 @@ import { UserController } from "./../controllers/user.controller";
 //builder, database connection and entity service
 
 // AUTO-GENERATED MODULE REGISTRATIONS
+// Report
+container.register<IReportRepository>("IReportRepository", { useClass: ReportRepository });
+container.register<IReportService>("IReportService", { useClass: ReportService });
+container.register<ReportController>("ReportController", { useClass: ReportController });
 // ScanHistory
 container.register<IScanHistoryRepository>("IScanHistoryRepository", { useClass: ScanHistoryRepository });
 container.register<IScanHistoryService>("IScanHistoryService", { useClass: ScanHistoryService });
