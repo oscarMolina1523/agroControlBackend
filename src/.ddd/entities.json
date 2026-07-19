@@ -249,6 +249,67 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "Parcel",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "area",
+          "type": "string"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "name": "statusTone",
+          "type": "string"
+        },
+        {
+          "name": "humidity",
+          "type": "string"
+        },
+        {
+          "name": "fertility",
+          "type": "string"
+        },
+        {
+          "name": "temperature",
+          "type": "string"
+        },
+        {
+          "name": "bounds",
+          "type": "string[]"
+        },
+        {
+          "name": "center",
+          "type": "string[]"
+        },
+        {
+          "name": "soilHistory",
+          "type": "string[]"
+        },
+        {
+          "name": "historicalData",
+          "type": "string[]"
+        },
+        {
+          "name": "cropId",
+          "type": "string"
+        },
+        {
+          "name": "sowingDate",
+          "type": "Date"
+        },
+        {
+          "name": "expectedProduction",
+          "type": "string"
+        }
+      ]
     }
   ]
 }
