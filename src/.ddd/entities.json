@@ -376,6 +376,63 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "Report",
+      "fields": [
+        {
+          "name": "resultado",
+          "type": "string"
+        },
+        {
+          "name": "cultivo",
+          "type": "string"
+        },
+        {
+          "name": "problema",
+          "type": "string"
+        },
+        {
+          "name": "causa",
+          "type": "string"
+        },
+        {
+          "name": "confianza",
+          "type": "string"
+        },
+        {
+          "name": "resumen",
+          "type": "string"
+        },
+        {
+          "name": "porQueSucede",
+          "type": "string"
+        },
+        {
+          "name": "recomendaciones",
+          "type": "string"
+        },
+        {
+          "name": "manejoSugerido",
+          "type": "string"
+        },
+        {
+          "name": "comoMejorarLaSalud",
+          "type": "string"
+        },
+        {
+          "name": "seguimiento",
+          "type": "string"
+        },
+        {
+          "name": "raw",
+          "type": "string"
+        },
+        {
+          "name": "userId",
+          "type": "string"
+        }
+      ]
     }
   ]
 }
