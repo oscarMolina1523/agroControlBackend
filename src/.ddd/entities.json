@@ -28,6 +28,59 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "Catalog",
+      "fields": [
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "name": "modelPath",
+          "type": "string"
+        },
+        {
+          "name": "nutritionalInfo",
+          "type": "string"
+        },
+        {
+          "name": "growthPeriod",
+          "type": "string"
+        },
+        {
+          "name": "waterRequirements",
+          "type": "string"
+        },
+        {
+          "name": "recommendedFertilizers",
+          "type": "string"
+        },
+        {
+          "name": "commonDiseases",
+          "type": "string"
+        },
+        {
+          "name": "parcels",
+          "type": "string[]"
+        },
+        {
+          "name": "estimatedProduction",
+          "type": "string"
+        },
+        {
+          "name": "currentPrice",
+          "type": "number"
+        },
+        {
+          "name": "modelType",
+          "type": "string"
+        }
+      ]
     }
   ]
 }

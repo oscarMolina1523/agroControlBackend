@@ -4,6 +4,7 @@ import express from "express";
 //AUTO-IMPORT-CONTAINER
 import "./WebApi/container/dependencyContainer";
 //AUTO-IMPORT-ROUTES
+import catalogRoutes from "./WebApi/routes/catalog.routes";
 import userRoutes from "./WebApi/routes/user.routes";
 //AUTO-IMPORT-OPENAPI
 import { apiReference } from "@scalar/express-api-reference";
@@ -30,6 +31,7 @@ app.get("/api-docs", async (req, res, next) => {
     }
   });
 //AUTO-REGISTER-ROUTES
+app.use("/catalog", catalogRoutes);
 app.use("/user", userRoutes);
 
 app.listen(PORT, () => {
