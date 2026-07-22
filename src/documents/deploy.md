@@ -86,6 +86,8 @@ Resultado esperado
 ---
 
 # 5. Iniciar sesión en Vercel
+<img width="1117" height="681" alt="login" src="https://github.com/user-attachments/assets/8c59187b-0fa7-465f-80b2-114ff4fe5ee8" />
+
 
 ```bash
 vercel login
