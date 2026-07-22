@@ -25,7 +25,6 @@ import authRoutes from "./WebApi/routes/auth.routes";
 import { validateToken } from "./WebApi/middlewares/auth.middleware";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -44,6 +43,11 @@ app.get("/api-docs", async (req, res, next) => {
       next(error);
     }
   });
+
+app.get("/", (req, res) => {
+  res.send("Agro control System API working!");
+});
+
 //AUTO-REGISTER-ROUTES
 app.use("/auth", authRoutes);
 app.use("/auditLog", validateToken, auditLogRoutes);
@@ -59,12 +63,14 @@ app.use("/alert", validateToken,alertRoutes);
 app.use("/catalog", validateToken, catalogRoutes);
 app.use("/user", validateToken, userRoutes);
 
-async function startServer() {
-  // await initializeDatabase();
+// async function startServer() {
+//   // await initializeDatabase();
 
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-}
+//   app.listen(PORT, () => {
+//     console.log(`Server running on port ${PORT}`);
+//   });
+// }
 
-startServer();
+// startServer();
+
+export default app;
