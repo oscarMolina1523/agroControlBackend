@@ -59,12 +59,14 @@ app.use("/alert", validateToken,alertRoutes);
 app.use("/catalog", validateToken, catalogRoutes);
 app.use("/user", validateToken, userRoutes);
 
-async function startServer() {
-  // await initializeDatabase();
+// async function startServer() {
+//   // await initializeDatabase();
 
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-}
+//   app.listen(PORT, () => {
+//     console.log(`Server running on port ${PORT}`);
+//   });
+// }
 
-startServer();
+// startServer();
+
+export default app;
